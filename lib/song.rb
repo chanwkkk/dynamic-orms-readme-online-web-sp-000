@@ -1,6 +1,5 @@
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
-require 'pry'
 
 class Song
 
@@ -57,7 +56,6 @@ class Song
 
   def self.find_by_name(name)
     sql = "SELECT * FROM #{self.table_name} WHERE name ='#{name}' "
-    binding.pry
     DB[:conn].execute(sql)
   end
 
